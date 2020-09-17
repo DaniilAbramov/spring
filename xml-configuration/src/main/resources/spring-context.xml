@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Notebook bean -->
+    <bean id="note" class="ru.itsjava.Notebook" >
+        <constructor-arg value="Asus"/>
+    </bean>
+
+<!--    <bean id="pc" class="PC">-->
+<!--        <qualifier type="Computer"/>-->
+<!--    </bean>-->
+
+
+    <!--    Programmer bean-->
+    <bean id="programmer" class="ru.itsjava.Programmer">
+        <constructor-arg ref="note"/>
+    </bean>
+
+    <!--Bad PRACTICE-->
+    <!--    <bean id="programmer" class="Programmer">-->
+    <!--        <property name="computer" ref="note"/>-->
+    <!--    </bean>-->
+    <!--    -->
+
+</beans>

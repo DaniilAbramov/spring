@@ -1,0 +1,3 @@
+# Project exclude paths
+/annotation-based-configuration/target/
+/java-based-configuration/target/
