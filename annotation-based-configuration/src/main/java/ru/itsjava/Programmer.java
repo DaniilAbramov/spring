@@ -11,7 +11,7 @@ public class Programmer {
     private final Computer computer;
 
     @Autowired
-    public Programmer(@Qualifier("myComp2") Computer computer) {
+    public Programmer(@Qualifier("myComp2   ") Computer computer) {
         this.computer = computer;
     }
 

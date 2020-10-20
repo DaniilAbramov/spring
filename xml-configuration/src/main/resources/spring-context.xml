@@ -4,7 +4,7 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Notebook bean -->
+    <!-- ru.itsjava.Notebook bean -->
     <bean id="note" class="ru.itsjava.Notebook" >
         <constructor-arg value="Asus"/>
     </bean>
