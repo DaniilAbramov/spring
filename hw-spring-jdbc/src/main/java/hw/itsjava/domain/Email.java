@@ -5,9 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class UserWithPets {
+public class Email {
     private long id;
-    private  String name;
-    private  String mail;
-    private String pets;
+    String email;
 }
