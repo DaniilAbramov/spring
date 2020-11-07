@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.context.annotation.Import;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @JdbcTest
@@ -23,17 +25,45 @@ public class UserDaoImplTest {
 
     @Test
     @DisplayName("Колличество людей в базе")
-    public void shouldCorrectCount(){
-        assertEquals(userDao.count(),3);
+    public void shouldCorrectCount() {
+        assertEquals(userDao.count(), 3);
     }
 
     @Test
     @DisplayName("Поиск по ID")
-    public void shouldCorrectFindById(){
-        Pet pet = new Pet(1L,"olegPet");
-        Email email = new Email(1L,"oleg@mail.ru");
-        User oleg = new User(1L,"Oleg",email,pet);
-        assertEquals(userDao.findById(4),oleg);
+    public void shouldCorrectFindById() {
+        Pet pet = new Pet(4L, "olegPet");
+        Email email = new Email(4L, "oleg@mail.ru");
+        User oleg = new User(4L, "Oleg", email, pet);
+        petsDao.insert(pet);
+        emailDao.insert(email);
+        userDao.insert(oleg);
+        assertEquals(userDao.findById(4L), oleg);    }
+
+    @Test
+    @DisplayName("Должен корректно вставлять")
+    public void shouldCorrectInsert() {
+        Pet pet = new Pet(4L, "olegPet");
+        Email email = new Email(4L, "oleg@mail.ru");
+        User oleg = new User(4L, "Oleg", email, pet);
+        petsDao.insert(pet);
+        emailDao.insert(email);
+        userDao.insert(oleg);
+        assertEquals(userDao.findById(4L), oleg);
+    }
+
+    @Test
+    @DisplayName("Должен корректно удалять")
+    public void shouldCorrectDelete(){
+        Pet pet = new Pet(4L, "olegPet");
+        Email email = new Email(4L, "oleg@mail.ru");
+        User oleg = new User(4L, "Oleg", email, pet);
+        petsDao.insert(pet);
+        emailDao.insert(email);
+        userDao.insert(oleg);
+        userDao.deletedUser(userDao.findById(1));
+        assertEquals(userDao.count(),3);
+
     }
 
 }
