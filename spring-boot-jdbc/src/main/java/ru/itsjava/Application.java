@@ -1,5 +1,7 @@
 package ru.itsjava;
 
+import hw.itsjava.dao.UserDaoJdbcWithPets;
+import hw.itsjava.domain.UserWithPets;
 import org.h2.tools.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +24,11 @@ public class Application {
 
         System.out.println("After insert: " + userDaoJdbc.count());
         System.out.println("userDaoJdbc.findById(1L) = " + userDaoJdbc.findById(1L));
-//        Console.main(args);
+        Console.main(args);
+        }
 
 
-    }
+
+
 }
+
