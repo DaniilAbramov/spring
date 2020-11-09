@@ -7,5 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class Email {
     private long id;
-    String email;
+    private String email;
 }

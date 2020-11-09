@@ -20,35 +20,6 @@ public class App {
         System.out.println("context.getBean(UserDao.class).count() = " + context.getBean(UserDao.class).count());
         UserDao userDao = context.getBean(UserDao.class);
 
-
-
-
-//        System.out.println("userDao.findById(1) = " + userDao.findById(1L));
-////        Console.main(args);
-//
-//        Pet pet = new Pet(1L,"Gurka");
-//        Pet pet1 = new Pet(1L,"pech");
-//        Pet pet2 = new Pet(1L,"boch");
-//        Email email = new Email(1L,"nikita@mail.ru");
-//        Email email1 = new Email(1L,"nik@mail.ru");
-//        Email email2 = new Email(1L,"dim@mail.ru");
-//        User nikita = new User(1L, "Nikita", email,pet);
-//        User nik = new User(1L, "nik", email1,pet1);
-//        User dim = new User(1L, "dima", email2,pet2);
-//        userDao.insert(nikita);
-//        userDao.insert(nik);
-//        userDao.insert(dim);
-//        System.out.println(nikita.getId());
-//        System.out.println(nik.getId());
-//        System.out.println(dim.getId());
-//        System.out.println("end " + userDao.count());
-//        userDao.updateEmail(userDao.findById(1),"newEmail@andrey.com");
-//        Pet rat = new Pet(1L,"Riki");
-//        userDao.deletedUser(userDao.findById(1L));
-//        System.out.println(userDao.findById(1L));
-
-
-
     }
 
 }

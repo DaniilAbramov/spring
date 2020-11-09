@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class Pet {
     private long id;
-    String nickname;
+    private final String nickname;
 
 }

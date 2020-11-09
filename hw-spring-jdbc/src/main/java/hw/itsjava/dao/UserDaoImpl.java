@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 @Repository
 @AllArgsConstructor
 public class UserDaoImpl implements UserDao {
@@ -61,19 +62,19 @@ public class UserDaoImpl implements UserDao {
         mapSqlParameterSource.addValue("EMAIL", newEmail);
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcOperations.update("UPDATE EMAILS SET EMAIL = :EMAIL WHERE ID = :ID",
-                mapSqlParameterSource,keyHolder);
+                mapSqlParameterSource, keyHolder);
         user.setId(keyHolder.getKey().longValue());
     }
 
     @Override
-    public void deletedUser(User user) {
+    public void deleteUser(User user) {
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue("ID", user.getId());
 //        mapSqlParameterSource.addValue("EMAIL", user.getEmail().getId());
 //        mapSqlParameterSource.addValue("PET", user.getPet().getId());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcOperations.update("DELETE FROM USERS WHERE ID = :ID",
-                mapSqlParameterSource,keyHolder);
+                mapSqlParameterSource, keyHolder);
         user.setId(keyHolder.getKey().longValue());
     }
 

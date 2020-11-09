@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @JdbcTest
 @Import({UserDaoImpl.class, EmailDaoImpl.class, PetDaoImpl.class})
+@DisplayName("Тесты методов jdbc")
 public class UserDaoImplTest {
     @Autowired
     UserDao userDao;
@@ -38,7 +39,8 @@ public class UserDaoImplTest {
         petsDao.insert(pet);
         emailDao.insert(email);
         userDao.insert(oleg);
-        assertEquals(userDao.findById(4L), oleg);    }
+        assertEquals(userDao.findById(4L), oleg);
+    }
 
     @Test
     @DisplayName("Должен корректно вставлять")
@@ -54,15 +56,15 @@ public class UserDaoImplTest {
 
     @Test
     @DisplayName("Должен корректно удалять")
-    public void shouldCorrectDelete(){
+    public void shouldCorrectDelete() {
         Pet pet = new Pet(4L, "olegPet");
         Email email = new Email(4L, "oleg@mail.ru");
         User oleg = new User(4L, "Oleg", email, pet);
         petsDao.insert(pet);
         emailDao.insert(email);
         userDao.insert(oleg);
-        userDao.deletedUser(userDao.findById(1));
-        assertEquals(userDao.count(),3);
+        userDao.deleteUser(userDao.findById(1));
+        assertEquals(userDao.count(), 3);
 
     }
 

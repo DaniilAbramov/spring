@@ -1,6 +1,5 @@
 package hw.itsjava.dao;
 
-import hw.itsjava.domain.Pet;
 import hw.itsjava.domain.User;
 
 public interface UserDao {
@@ -9,11 +8,11 @@ public interface UserDao {
 
     void insert(User user);
 
-   User findById(long id);
+    User findById(long id);
 
-   void updateEmail(User user, String newEmail);
+    void updateEmail(User user, String newEmail);
 
-   void deletedUser(User user);
+    void deleteUser(User user);
 
 //   void addPet(User user, Pet pet);
 }
